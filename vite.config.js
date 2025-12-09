@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',
+  base: '/WebGames/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -11,11 +11,18 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'arcade.html',
-        game: 'index.html',
+        fallingblocks: 'index.html',
         breakout: 'breakout/index.html'
       },
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === 'main') {
+            return 'assets/[name]-[hash].js';
+          }
+          return 'assets/[name]-[hash].js';
+        },
+        assetFileNames: 'assets/[name]-[hash][extname]'
       }
     }
   },
