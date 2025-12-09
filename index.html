@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Modern falling block game with particle effects, combos, and T-Spins">
+  <title>Falling Blocks - Play Now!</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="game-header">
+      <button id="theme-toggle" class="control-btn" title="Toggle Light/Dark Mode">🌓</button>
+      <h1>Falling Blocks</h1>
+      <button id="mute-btn" class="control-btn" title="Toggle Sound">🔊</button>
+    </div>
+    
+    <div id="game-main">
+      <!-- Left Side: All Stats -->
+      <div id="side-panel-left">
+        <div class="panel-section compact">
+          <h3>Score</h3>
+          <div class="stat-row">
+            <span class="stat-label">Current</span>
+            <div id="score">0</div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Best</span>
+            <div id="high-score">0</div>
+          </div>
+        </div>
+        
+        <div class="panel-section compact">
+          <h3>Progress</h3>
+          <div class="stat-row">
+            <span class="stat-label">Level</span>
+            <div id="level">1</div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Lines</span>
+            <div id="lines">0</div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Combo</span>
+            <div id="combo">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Center: Game Board -->
+      <div id="game-board-container">
+        <canvas id="game-canvas" width="300" height="600"></canvas>
+        <div id="game-overlay" class="hidden">
+          <div id="overlay-content"></div>
+        </div>
+      </div>
+      
+      <!-- Right Side: All Controls -->
+      <div id="side-panel-right">
+        <div class="panel-section compact">
+          <h3>Movement</h3>
+          <div class="side-controls">
+            <button class="control-btn-game" data-action="move-left" title="Move Left (←)">
+              <span class="btn-icon">←</span>
+            </button>
+            <button class="control-btn-game" data-action="move-down" title="Soft Drop (↓)">
+              <span class="btn-icon">↓</span>
+            </button>
+            <button class="control-btn-game" data-action="move-right" title="Move Right (→)">
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="panel-section compact">
+          <h3>Actions</h3>
+          <div class="side-controls">
+            <button class="control-btn-game" data-action="rotate-ccw" title="Rotate Left (Z)">
+              <span class="btn-icon">↶</span>
+            </button>
+            <button class="control-btn-game" data-action="rotate-cw" title="Rotate Right (↑/X)">
+              <span class="btn-icon">↷</span>
+            </button>
+            <button class="control-btn-game" data-action="hard-drop" title="Hard Drop (Space)">
+              <span class="btn-icon">⬇</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="panel-section compact">
+          <h3>Game</h3>
+          <div class="side-controls">
+            <button class="control-btn-game" data-action="pause" title="Pause (P/Esc)">
+              <span class="btn-icon">⏸</span>
+            </button>
+            <button class="control-btn-game" data-action="restart" title="Restart (R)">
+              <span class="btn-icon">🔄</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

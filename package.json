@@ -1,0 +1,17 @@
+{
+  "name": "falling-block-game",
+  "version": "1.0.0",
+  "description": "Modern falling block game with particle effects, combos, and T-Spins",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["game", "tetris", "blocks", "puzzle"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
