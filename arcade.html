@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade - Choose Your Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      color: #e0e6ed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .arcade-container {
+      text-align: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00f0f0, #a000f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(0, 240, 240, 0.3);
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 3rem;
+      color: #00f0f0;
+      opacity: 0.8;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .game-card {
+      background: rgba(26, 26, 46, 0.9);
+      border: 2px solid rgba(0, 240, 240, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0, 240, 240, 0.1), rgba(160, 0, 240, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 240, 240, 0.8);
+      box-shadow: 0 10px 40px rgba(0, 240, 240, 0.3);
+    }
+
+    .game-card:hover::before {
+      opacity: 1;
+    }
+
+    .game-icon {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .game-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00f0f0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .game-description {
+      font-size: 1rem;
+      color: #e0e6ed;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .play-button {
+      background: linear-gradient(135deg, rgba(0, 240, 240, 0.3), rgba(160, 0, 240, 0.3));
+      border: 2px solid rgba(0, 240, 240, 0.5);
+      color: #00f0f0;
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+      font-weight: bold;
+    }
+
+    .play-button:hover {
+      background: linear-gradient(135deg, rgba(0, 240, 240, 0.5), rgba(160, 0, 240, 0.5));
+      border-color: rgba(0, 240, 240, 0.9);
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(0, 240, 240, 0.4);
+    }
+
+    .footer {
+      margin-top: 3rem;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="arcade-container">
+    <h1>🎮 ARCADE 🎮</h1>
+    <p class="subtitle">Choose Your Game</p>
+
+    <div class="games-grid">
+      <div class="game-card" onclick="playGame('falling-blocks')">
+        <div class="game-icon">🟦</div>
+        <h2 class="game-title">Falling Blocks</h2>
+        <p class="game-description">
+          Classic Tetris-style puzzle game with modern features. 
+          Stack blocks, clear lines, and achieve combos!
+        </p>
+        <button class="play-button">Play Now</button>
+      </div>
+
+      <div class="game-card" onclick="playGame('breakout')">
+        <div class="game-icon">🎯</div>
+        <h2 class="game-title">Breakout</h2>
+        <p class="game-description">
+          Classic brick-breaking action! 
+          Control the paddle and destroy all the bricks.
+        </p>
+        <button class="play-button">Play Now</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      Made with ❤️ using vanilla JavaScript
+    </div>
+  </div>
+
+  <script>
+    function playGame(game) {
+      if (game === 'falling-blocks') {
+        window.location.href = '/index.html';
+      } else if (game === 'breakout') {
+        window.location.href = '/breakout/index.html';
+      }
+    }
+  </script>
+</body>
+</html>

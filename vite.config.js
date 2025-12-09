@@ -9,6 +9,11 @@ export default defineConfig({
     minify: 'esbuild',
     target: 'esnext',
     rollupOptions: {
+      input: {
+        main: 'arcade.html',
+        game: 'index.html',
+        breakout: 'breakout/index.html'
+      },
       output: {
         manualChunks: undefined
       }
@@ -16,7 +21,7 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true
+    open: '/arcade.html'
   },
   optimizeDeps: {
     include: []

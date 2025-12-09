@@ -30,7 +30,9 @@
 
 
   
-  - [ ] 2.2 Define wall kick data for SRS rotation system
+  - [x] 2.2 Define wall kick data for SRS rotation system
+
+
     - Create WALL_KICKS constant with offset tables
 
 
@@ -51,11 +53,15 @@
 
 
 
+
+
 - [ ] 3. Implement Tetromino Factory with 7-bag randomization
   - [ ] 3.1 Create Tetromino class
     - Implement constructor with type, shape, color, position, rotation
     - Add methods for getting current shape based on rotation
     - Add clone method for hold functionality
+
+
 
 
 
@@ -69,6 +75,8 @@
 
 
 
+
+
     - Ensure randomization produces all pieces before repeating
     - _Requirements: 3.5_
   
@@ -77,6 +85,8 @@
     - Add function to get next piece and refill queue
 
     - _Requirements: 3.5_
+
+
 
 
   
@@ -95,6 +105,8 @@
     - _Requirements: 6.1, 6.4_
   
   - [x] 4.2 Implement collision detection
+
+
 
     - Create function to check if piece can be placed at position
     - Test against board boundaries and occupied cells
@@ -124,6 +136,8 @@
     - Test each wall kick offset until valid position found
     - Support both clockwise and counter-clockwise rotation
 
+
+
     - _Requirements: 1.3, 1.4_
   
   - [ ]* 4.7 Write property test for rotation round-trip
@@ -148,6 +162,8 @@
 
 
   - [x] 5.1 Implement line detection
+
+
 
 
     - Create function to identify complete rows
@@ -179,6 +195,8 @@
     - Initialize with score, level, lines, combo, highScore
     - Implement method to calculate line clear score
     - Add combo tracking and bonus calculation
+
+
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
 
@@ -192,10 +210,14 @@
   
   - [ ]* 6.3 Write property test for combo scoring
     - **Property 9: Combo scoring accumulation**
+
+
     - **Validates: Requirements 4.5**
   
   - [ ] 6.4 Implement T-Spin detection
     - Create function to detect T-Spin based on corner occupancy
+
+
 
 
 
@@ -212,6 +234,8 @@
   - [ ] 6.6 Implement hard drop scoring
     - Add method to calculate hard drop points based on distance
     - Award 2 points per cell dropped
+
+
     - _Requirements: 4.7_
   
   - [ ]* 6.7 Write property test for hard drop scoring
@@ -226,11 +250,15 @@
 
     - Handle missing or corrupted data gracefully
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
+
+
   
   - [ ]* 6.9 Write property test for high score persistence
     - **Property 23: High score persistence round-trip**
 
     - **Validates: Requirements 9.2, 9.3**
+
+
 
 - [ ] 7. Implement level system
   - [ ] 7.1 Create LevelSystem class
@@ -246,6 +274,8 @@
   - [x]* 7.3 Write property test for fall speed monotonicity
 
     - **Property 13: Fall speed monotonicity**
+
+
     - **Validates: Requirements 5.3**
 
 - [ ] 8. Implement game state management
@@ -271,6 +301,8 @@
   
   - [ ]* 8.4 Write property test for hold lock state
     - **Property 6: Hold lock state management**
+
+
     - **Validates: Requirements 3.3, 3.4**
   
   - [ ] 8.5 Implement lock delay mechanics
@@ -303,12 +335,16 @@
   - [ ] 8.9 Implement pause and reset functionality
     - Add pause toggle method
 
+
+
     - Add reset method that clears all state
     - _Requirements: 8.1, 8.4, 8.5_
   
   - [ ]* 8.10 Write property test for pause toggle
     - **Property 21: Pause state toggle**
     - **Validates: Requirements 8.1**
+
+
   
   - [ ]* 8.11 Write property test for game reset
     - **Property 22: Game reset completeness**
@@ -316,7 +352,9 @@
 
     - **Validates: Requirements 8.4, 8.5**
 
-- [ ] 9. Checkpoint - Ensure all tests pass
+- [x] 9. Checkpoint - Ensure all tests pass
+
+
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 10. Implement input handling
@@ -327,13 +365,17 @@
     - Map keys to game commands (arrows, space, Z, X, C, P, R, Escape)
     - Implement input buffering for responsive controls
     - Prevent default browser behavior for game keys
+
+
     - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 8.1, 8.4_
 
   
 
 
 
-  - [ ] 10.2 Create TouchHandler class for mobile
+  - [x] 10.2 Create TouchHandler class for mobile
+
+
     - Set up touch event listeners on canvas
     - Implement swipe detection for left/right/down movement
     - Implement tap detection for rotation
@@ -346,12 +388,16 @@
     - Set up canvas context and scaling
     - Implement method to draw board grid
 
+
+
     - Add method to draw individual cells with colors
 
 
     - Implement responsive canvas sizing
     - _Requirements: 10.1, 10.2_
   
+
+
   - [ ] 11.2 Implement piece rendering
     - Create method to draw active piece
     - Add method to draw ghost piece (semi-transparent)
@@ -362,12 +408,16 @@
   
   - [ ]* 11.3 Write property test for hard drop and ghost position
     - **Property 3: Hard drop matches ghost position**
+
+
     - **Validates: Requirements 1.6, 2.1**
   
   - [ ] 11.4 Implement UI rendering
     - Draw score, level, lines cleared
     - Render next queue preview (3 pieces)
     - Render hold queue preview
+
+
     - Display high score
     - Show pause overlay when paused
     - Show game over screen
@@ -375,11 +425,17 @@
   
   - [ ] 11.5 Create ParticleSystem class
     - Implement particle spawning for line clears
+
+
     - Add particle spawning for hard drops
     - Add special particles for T-Spins
     - Implement particle update and rendering
+
+
     - Use object pooling for efficiency
     - _Requirements: 2.2, 2.3, 2.4_
+
+
 
 
 
@@ -388,11 +444,15 @@
 
   - [ ] 12.1 Create AudioManager class
     - Load sound effects (rotate, lock, clear, tspin)
+
+
     - Load background music
     - Implement play methods for each sound
     - Handle audio context initialization on user interaction
     - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5_
   
+
+
 
 
   - [ ] 12.2 Implement mute functionality
@@ -401,9 +461,14 @@
     - _Requirements: 11.6_
 
 
+
+
   
   - [ ]* 12.3 Write property test for mute toggle
     - **Property 24: Mute state toggle**
+
+
+
     - **Validates: Requirements 11.6**
 
 - [ ] 13. Implement main game loop
